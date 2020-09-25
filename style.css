@@ -1,0 +1,930 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+:root {
+  --ac-color: #f15cc2;
+  --bg-color-dark: #303030;
+  --bg-color-light: #fff;
+  --tx-color: #7a7a7a;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* General */
+.fas,
+.fab {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+
+h1 {
+  font-size: 1.7rem;
+  line-height: 1.6rem;
+}
+
+.section-headings {
+  text-align: center;
+}
+
+/* Secondary navigation */
+nav.secondary-nav {
+  background-color: var(--bg-color-dark);
+  color: white;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.6rem;
+}
+
+nav.secondary-nav .flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.secondary-nav .main-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.secondary-nav .flex-container a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* Primary navigation */
+nav.primary-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+nav.primary-nav img {
+  max-width: 125px;
+  margin-left: 100%;
+}
+
+nav.primary-nav .hamburger-menu {
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+nav.primary-nav .hamburger-menu .line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--ac-color);
+  transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg) translate(-8px, 5px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-8px, -5px);
+}
+
+.navbar {
+  background-color: var(--bg-color-dark);
+  opacity: 75%;
+  width: 125px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+}
+
+.change {
+  right: 0px;
+}
+
+nav.primary-nav .navbar .nav-list {
+  text-align: right;
+}
+
+nav.primary-nav .navbar .nav-list .nav-item {
+  list-style: none;
+  margin: 30px;
+}
+
+nav.primary-nav .navbar .nav-list .nav-item .nav-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--ac-color);
+}
+
+nav.primary-nav .navbar .nav-list .nav-item .nav-link:hover {
+  color: var(--ac-color);
+}
+
+nav.primary-nav-t {
+  display: none;
+}
+
+nav.primary-nav-d {
+  display: none;
+}
+
+/* Landing section */
+
+section.landing {
+  background-image: url("images/backimage_phone.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 900px;
+  display: flex;
+}
+
+section.landing .flex-container {
+  max-width: 70%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+section.landing .flex-container div {
+  color: white;
+  text-align: center;
+}
+
+section.landing .flex-container div h1 {
+  font-weight: 500;
+}
+
+section.landing .flex-container div p {
+  margin-top: 0.75rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.75rem;
+}
+
+section.landing .flex-container div button {
+  margin-top: 0.75rem;
+  background-color: transparent;
+  border: 2px solid var(--ac-color);
+  border-radius: 10px;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+section.landing .flex-container div button:hover {
+  border: 2px solid white;
+}
+
+/* Blog section */
+section.blog .section-headings {
+  margin-top: 5rem;
+}
+
+section.blog h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--tx-color);
+  letter-spacing: 0.2rem;
+}
+
+section.blog hr {
+  width: 15%;
+  margin: 1rem auto 3.5rem auto;
+  color: var(--ac-color);
+  height: 0.5px;
+}
+
+section.blog .blog-container .post-card {
+  width: 342px;
+  margin: 0 auto 2rem auto;
+  border: 1px solid lightgrey;
+}
+
+section.blog .blog-container .post-card h4 {
+  padding: 0 1rem;
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+section.blog .blog-container .post-card h4 a {
+  text-decoration: none;
+  color: var(--ac-color);
+}
+
+section.blog .blog-container .post-card .post-date {
+  padding: 0 1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--tx-color);
+}
+
+section.blog .blog-container .post-card .post-excerpt {
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--tx-color);
+  padding-bottom: 1rem;
+}
+
+section.blog .blog-container .post-card .post-more {
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--tx-color);
+  padding-bottom: 1rem;
+}
+
+section.blog .blog-container .post-card .post-more a {
+  text-decoration: none;
+  color: var(--ac-color);
+}
+
+section.blog .blog-button {
+  text-align: center;
+}
+
+section.blog .blog-button button {
+  margin: 2rem 0 4rem 0;
+  background-color: transparent;
+  border: 2px solid var(--ac-color);
+  border-radius: 10px;
+  color: var(--ac-color);
+  padding: 7.5px 17.5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* About US section */
+section.about {
+  background-image: url("images/pattern_pozadina.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section.about .section-headings {
+  padding-top: 5rem;
+}
+
+section.about h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.2rem;
+}
+
+section.about hr {
+  width: 15%;
+  margin: 1rem auto 2.5rem auto;
+  color: var(--ac-color);
+  height: 0.5px;
+}
+
+section.about .about-text {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+section.about .about-text p {
+  text-align: justify;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: white;
+}
+
+section.about .flex-container {
+  max-width: 80%;
+  margin: 2rem auto 0 auto;
+}
+
+section.about .flex-container .accordion-item {
+  background-color: transparent;
+  border: 1px solid var(--ac-color);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+section.about .flex-container .accordion-item .accordion-link {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.about .flex-container .accordion-item .accordion-link .fas {
+  font-size: 1rem;
+  color: var(--ac-color);
+}
+
+section.about .flex-container .accordion-item .answer {
+  color: white;
+  margin-top: 0rem;
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  font-weight: 300;
+  transition: max-height 0.75s;
+}
+
+section.about .flex-container .accordion-item:target .answer {
+  max-height: 25rem;
+  margin-top: 1rem;
+}
+
+section.about .flex-container .accordion-item:target .fas {
+  opacity: 0;
+}
+
+section.about .flex-container .about-image {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+section.about .flex-container img {
+  max-width: 50%;
+}
+
+/* Review section - Temporary, delete after intaling WP Review Plugin*/
+section.reviews .mobile-reviews {
+  max-width: 90%;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+}
+
+section.reviews .desktop-reviews {
+  display: none;
+}
+
+/* CallToAction */
+
+section.action {
+  background-color: #f2f2f2;
+}
+
+section.action .flex-container {
+  width: 80%;
+  margin: 3rem auto 0 auto;
+  padding: 5rem 0 0 0;
+}
+
+section.action .flex-container h3 {
+  color: var(--ac-color);
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+section.action .flex-container p {
+  color: var(--tx-color);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+section.action .flex-container p {
+  color: var(--tx-color);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+section.action .flex-container button {
+  margin: 2rem 0 4rem 0;
+  background-color: transparent;
+  border: 2px solid var(--ac-color);
+  border-radius: 10px;
+  color: var(--ac-color);
+  padding: 7.5px 17.5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.75rem;
+  letter-spacing: 0.3rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+section.action .flex-container button:hover {
+  background-color: var(--ac-color);
+  color: white;
+}
+
+/* Gallery */
+section.gallery {
+  margin-top: 5rem;
+}
+
+section.gallery h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--ac-color);
+  letter-spacing: 0.2rem;
+}
+
+section.gallery hr {
+  width: 15%;
+  margin: 1rem auto 2.5rem auto;
+  color: var(--ac-color);
+  height: 0.5px;
+}
+
+section.gallery .mobile-gallery {
+  text-align: center;
+}
+
+section.gallery .desktop-gallery {
+  display: none;
+}
+
+/* Video  */
+section.video {
+  background-color: #f2f2f2;
+  padding: 5rem 0;
+}
+
+section.video .video-section {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Contact */
+section.contact {
+  background-image: url("images/pattern_pozadina.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3rem 0;
+}
+
+section.contact .flex-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section.contact .flex-container .flex-item h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.2rem;
+  margin-top: 2rem;
+}
+
+section.contact .flex-container .flex-item p {
+  color: white;
+  font-size: 1.25rem;
+}
+
+section.contact .flex-container .flex-item hr {
+  width: 15%;
+  margin: 1rem auto 2.5rem auto;
+  color: var(--ac-color);
+  height: 0.5px;
+}
+
+section.contact .flex-container .flex-item .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+  font-size: 1.25rem;
+}
+
+section.contact .flex-container .flex-item .grid .grid-heading {
+  grid-column: 1/5;
+  padding: 0.5rem;
+}
+
+section.contact .flex-container .flex-item .grid .grid-item {
+  padding: 0.5rem;
+}
+
+section.contact .flex-container .flex-item .phone {
+  margin-top: 2rem;
+}
+
+section.contact .flex-container .flex-item a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+section.contact .flex-container .flex-item .adress {
+  margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-color-dark);
+}
+
+footer .main-flex-container {
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .main-flex-container .flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .flex-container a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+footer .main-flex-container .flex-container i {
+  font-size: 1rem;
+}
+
+/********************************************************************************************************/
+/** PAGES **/
+
+/* Headers */
+section.page-post-header {
+  background-image: url("images/novosti_pozadina.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section.page-post-header div {
+  text-align: center;
+  padding: 5rem;
+}
+
+section.page-post-header div h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 3.5rem;
+}
+
+section.page-post-header div button {
+  margin-top: 2.5rem;
+  background-color: transparent;
+  border: 2px solid var(--ac-color);
+  border-radius: 10px;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+section.page-post-header div button:hover {
+  border: 2px solid white;
+}
+
+/**************************************************************************************************/
+/** POSTS **/
+
+section.post .container {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+section.post .container h1 {
+  color: var(--ac-color);
+  font-weight: 300;
+}
+
+section.post .container h2 {
+  color: var(--bg-color-dark);
+  font-weight: 400;
+}
+
+section.post .container p {
+  color: var(--tx-color);
+  font-weight: 300;
+  margin: 1rem 0;
+}
+
+/*** Responsive Styles Tablet ***/
+@media screen and (min-width: 479px) {
+  /* General */
+  .fas,
+  .fab {
+    font-size: 0.75rem;
+  }
+  /* Secondary navigation */
+  nav.secondary-nav {
+    font-size: 0.75rem;
+  }
+
+  nav.secondary-nav .main-flex-container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Primary navigation */
+  nav.primary-nav {
+    display: none;
+  }
+
+  nav.primary-nav-t {
+    display: block;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  nav.primary-nav-t img {
+    max-width: 150px;
+  }
+
+  nav.primary-nav-t .nav-list {
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  nav.primary-nav-t .nav-list .nav-item {
+    list-style: none;
+    margin: 0 8px;
+  }
+
+  nav.primary-nav-t .nav-list .nav-item .nav-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--tx-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  /* Landing section  */
+
+  section.landing .flex-container div h1 {
+    font-size: 2.25rem;
+    line-height: 1.8rem;
+  }
+
+  section.landing .flex-container div p {
+    margin-top: 0.85rem;
+    font-size: 2rem;
+  }
+
+  section.landing .flex-container div button {
+    margin-top: 0.85rem;
+    padding: 5px 15px;
+    font-size: 1.25rem;
+  }
+
+  /* Blog section */
+
+  section.blog .blog-container {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  /* About Us section */
+  section.about .about-text {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  /**************************************************************************************************/
+  /** POSTS **/
+
+  section.post .container {
+    width: 80%;
+  }
+}
+
+/*** Responsive Styles Desktop ***/
+@media screen and (min-width: 980px) {
+  /* General */
+  .fas,
+  .fab {
+    font-size: 0.85rem;
+  }
+  /* Secondary navigation */
+  nav.secondary-nav {
+    font-size: 0.75rem;
+  }
+
+  nav.secondary-nav .main-flex-container {
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Primary navigation */
+  nav.primary-nav-t {
+    display: none;
+  }
+
+  nav.primary-nav-d {
+    display: block;
+    padding: 1rem;
+  }
+
+  nav.primary-nav-d .flex-container {
+    max-width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  nav.primary-nav-d .flex-container img {
+    max-width: 175px;
+  }
+
+  nav.primary-nav-d .flex-container .nav-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  nav.primary-nav-d .nav-list .nav-item {
+    list-style: none;
+    margin: 0 9px;
+  }
+
+  nav.primary-nav-d .nav-list .nav-item .nav-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--bg-color-dark);
+    font-size: 1.05rem;
+    font-weight: 300;
+  }
+
+  /* Landing section */
+
+  section.landing {
+    background-image: url("images/pozadina1600.jpg");
+    background-attachment: fixed;
+    height: 800px;
+  }
+
+  section.landing .flex-container div h1 {
+    font-size: 3.5rem;
+  }
+
+  section.landing .flex-container div p {
+    margin-top: 0.95rem;
+    font-size: 2.6rem;
+  }
+
+  section.landing .flex-container div button {
+    margin-top: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  /* Blog section */
+  section.blog .blog-container {
+    max-width: 70%;
+  }
+
+  section.blog .blog-container .post-card {
+    margin: 0 0 2rem 0;
+  }
+
+  /* About Us section */
+  section.about .about-text {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  section.about .flex-container {
+    max-width: 60%;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+  }
+
+  section.about .flex-container .accordion {
+    margin-top: 5rem;
+    margin-left: 3%;
+    flex-basis: 50%;
+  }
+
+  section.about .flex-container .about-image {
+    margin-right: 3%;
+    flex-basis: 50%;
+  }
+
+  section.about .flex-container img {
+    max-width: 30vh;
+  }
+
+  /* Review section - Temporary, delete after intaling WP Review Plugin*/
+  section.reviews .mobile-reviews {
+    display: none;
+  }
+
+  section.reviews .desktop-reviews {
+    display: block;
+    max-width: 90%;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+  }
+
+  section.reviews .desktop-reviews img {
+    max-width: 100%;
+  }
+
+  /* CallToAction starts here */
+
+  section.action .flex-container {
+    width: 60%;
+    margin: 3rem auto 0 auto;
+    padding: 5rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Gallery */
+  section.gallery .mobile-gallery {
+    display: none;
+  }
+
+  section.gallery .desktop-gallery {
+    display: block;
+    text-align: center;
+  }
+
+  section.video .video-section {
+    width: 60%;
+  }
+
+  /* Contact */
+  section.contact .flex-container {
+    width: 60%;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+  }
+  section.contact .flex-container .flex-item {
+    flex-basis: 50%;
+  }
+
+  /* Footer */
+  footer .main-flex-container {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  /**************************************************************************************************/
+  /** POSTS **/
+
+  section.post .container {
+    width: 55%;
+  }
+}
